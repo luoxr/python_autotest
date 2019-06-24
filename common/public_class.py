@@ -1,8 +1,8 @@
 __author__ = "luo"
 
 import unittest
-from demo_test.common.data_config import *
-from demo_test.common.url_request import *
+from test_unittest.common.data_config import *
+from test_unittest.common.url_request import *
 
 
 class SetupTeardown(unittest.TestCase):

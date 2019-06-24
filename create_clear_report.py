@@ -55,11 +55,3 @@ def create_report_dirs():
             print("目录%s已存在，未进行创建" % path)
 
 
-if __name__ == "__main__":
-    create_report_dirs()
-    # clear_report_files()
-
-
-
-
-

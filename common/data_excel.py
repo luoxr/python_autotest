@@ -70,8 +70,3 @@ def get_data_by_key(data_all, url_key):
     return list_data_key
 
 
-if __name__ == "__main__":
-
-    list_data = get_data_all("faxian", "faxian")
-    print(get_data_by_key(list_data, "foundGoodslist"))
-

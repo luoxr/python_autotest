@@ -1,10 +1,10 @@
 __author__ = "luo"
 
 import sys
+import os
 import unittest
 from BeautifulReport import BeautifulReport
-from demo_test.create_clear_report import *
-from demo_test.testCase.test_faxian import FaXianTest
+from test_unittest.testCase.test_faxian import FaXianTest
 
 path = os.getcwd() + "/run_all.py"
 sys.path.append(path)
@@ -27,13 +27,10 @@ def whole_suite():
     return suite
 
 
-if __name__ == '__main__': 
+if __name__ == '__main__':
     # 创建测试运行器（verbosity=2可以生成更详细的测试信息）
     # runner = unittest.TextTestRunner(verbosity=2)
     # runner.run(whole_suite())
-
-    create_report_dirs()
-    # clear_report_files()
 
     report_name = "/report/" + "测试报告"
     runner = BeautifulReport(whole_suite())

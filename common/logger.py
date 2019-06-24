@@ -25,7 +25,6 @@ class Logger(object):
         rq = time.strftime("%Y-%m-%d %H-%M-%S", time.localtime(time.time()))
         log_path = os.getcwd() + "/logs/"
         log_name = log_path + rq + ".log"
-
         #  这里进行判断，如果logger.handlers列表为空，则添加，否则，直接去写日志，解决重复打印的问题
         if not self.logger.handlers:
 
