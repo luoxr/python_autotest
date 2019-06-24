@@ -4,9 +4,9 @@ import sys
 import os
 import unittest
 from BeautifulReport import BeautifulReport
-from test_unittest.testCase.test_faxian import FaXianTest
+from TestUnittest.testCase.test_faxian import FaXianTest
 
-path = os.getcwd() + "/run_all.py"
+path = os.getcwd() + "/runAll.py"
 sys.path.append(path)
 
 test_cases = (FaXianTest,)
