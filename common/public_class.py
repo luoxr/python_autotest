@@ -10,16 +10,18 @@ class SetupTeardown(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print("class module 开始测试>>>>>>>>>>>")
+        pass
 
     @classmethod
     def tearDownClass(cls):
         print("class module 测试结束>>>>>>>>>>>>\n")
+        pass
 
     def setUp(self):
-        print("setup begin test")
+        pass
 
     def tearDown(self):
-        print("teardown test end!")
+        pass
 
 
 def get_user_info():
@@ -37,7 +39,10 @@ def get_user_info():
     }
     login_result = UrlRequest.url_request(method="post", url=login_url, json=login_params)
     if login_result["msg"]:
-        logger.critical(msg="token请求失败，请检查接口！")
+        logger.critical(msg=u"token请求失败，请检查接口！")
+        sys.exit()
+    if not login_result["result"]["success"]:
+        logger.error(msg=login_result["result"]["message"])
         sys.exit()
     token_ = login_result.get("result")["data"]["token"]
 
@@ -48,7 +53,7 @@ def get_user_info():
     }
     userinfo_result = UrlRequest.url_request(method="get", url=userinfo_url, data=userinfo_params)
     if userinfo_result["msg"]:
-        logger.critical(msg="token无效，获取用户信息失败，请检查登录信息")
+        logger.critical(msg=u"token无效，获取用户信息失败，请检查登录信息")
         sys.exit()
     userinfo_ = userinfo_result["result"]
 

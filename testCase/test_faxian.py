@@ -29,12 +29,12 @@ class FaXianTest(SetupTeardown):
                                             data=excel_data["params"],
                                             headers=headers)
             if result["msg"]:
-                logger.critical(msg="config请求失败，请检查接口")
+                logger.critical(msg=u"config请求失败，请检查接口")
                 sys.exit()
             self.assertFalse(result["msg"])
             self.assertEqual(result["result"]["success"], excel_data["success"])
         else:
-            logger.warning(msg="未找到对应的url_key")
+            logger.warning(msg=u"未找到对应的url_key")
 
     @ddt.data(*get_data_by_key(data_all=test_data, url_key="saveFoundGood"))
     def test_release_goods(self, excel_data):
@@ -52,12 +52,12 @@ class FaXianTest(SetupTeardown):
                                             json=excel_data["params"],
                                             headers=headers)
             if result["msg"]:
-                logger.critical(msg="config请求失败，请检查接口")
+                logger.critical(msg=u"config请求失败，请检查接口")
                 sys.exit()
             self.assertFalse(result["msg"])
             self.assertEqual(result["result"]["success"], excel_data["success"])
         else:
-            logger.warning(msg="未找到对应的url_key")
+            logger.warning(msg=u"未找到对应的url_key")
 
 
 

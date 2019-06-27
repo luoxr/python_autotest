@@ -53,13 +53,13 @@ class UrlRequest:
                     response = requests.delete(url=url, json=json, headers=headers, cookies=cookies, timeout=timeout)
                     response.raise_for_status()
             else:
-                msg = "请求方式错误，请检查（get/post/put/delete）"
+                msg = u"请求方式错误，请检查（get/post/put/delete）"
                 result["msg"] = msg
                 logger.error(msg=msg)
                 return result
         # Requests显式抛出的异常都继承自 requests.exceptions.RequestException
         except requests.exceptions.RequestException as e:
-            msg = "接口请求发生了异常：%s" % e
+            msg = u"接口请求发生了异常：%s" % e
             logger.error(msg=msg)
             result["msg"] = msg
         # 在try子句没有发生任何异常、没有return语句的时候执行

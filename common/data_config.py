@@ -28,7 +28,7 @@ class Config(object):
             else:
                 config = self.ini.items(section)
         except configparser.Error as msg:
-            msg = "读取配置文件错误，请检查输入，错误详情：" + str(msg)
+            msg = u"读取配置文件错误，请检查输入，错误详情：" + str(msg)
             logger.error(msg=msg)
             config = False
 

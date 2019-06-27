@@ -30,7 +30,7 @@ def get_data_all(excel_name, sheet_name):
             break
         else:
             # 表不存在时，抛出异常
-            raise Exception("没有在文件%s.xlsx中找到%s表" % (excel_name, sheet_name))
+            raise Exception(u"没有在文件%s.xlsx中找到%s表" % (excel_name, sheet_name))
     # 获取第一行数据（标题行）
     list_data_row_1 = []
     for row in data_sheet[1]:
